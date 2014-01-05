@@ -49,7 +49,7 @@ function dd_page_for_floating_display(){
 	    
 		update_option(DD_FLOAT_BUTTON, $ddFloatButtons);
 
-		echo "<div id=\"updatemessage\" class=\"updated fade\"><p>Rocksocial settings updated.</p></div>\n";
+		echo "<div id=\"updatemessage\" class=\"updated fade\"><p>Rocksocial configurações atualizadas.</p></div>\n";
 		echo "<script type=\"text/javascript\">setTimeout(function(){jQuery('#updatemessage').hide('slow');}, 3000);</script>";	
 		
 		
@@ -57,7 +57,7 @@ function dd_page_for_floating_display(){
 	
         dd_clear_form_float_display(DD_FUNC_TYPE_RESET);
         
-		echo "<div id=\"errmessage\" class=\"error fade\"><p>Rocksocial settings cleared.</p></div>\n";
+		echo "<div id=\"errmessage\" class=\"error fade\"><p>Configurações padrão foram aplicadas com sucesso.</p></div>\n";
 		echo "<script type=\"text/javascript\">setTimeout(function(){jQuery('#errmessage').hide('slow');}, 3000);</script>";	
 			
   	}
@@ -111,7 +111,7 @@ function checkCategory(){
 
 <div class="wrap dd-wrap columns-2">
 	<div id="icon-edit-pages" class="icon32 icon32-posts-page"><br /></div>
-	<h2>Rocksocial - Floating Button Bar Configuration</h2>
+	<h2>Rocksocial - Configurações da barra flutuante</h2>
 	
 	<div id="poststuff" class="metabox-holder has-right-sidebar">
 		<?php include("dd-sidebar.php"); ?>
@@ -126,7 +126,7 @@ function checkCategory(){
 						<div class="inside">
 							<table class="form-table">
 								<tr valign="top">
-									<th scope="row">Enable Floating Display</th>
+									<th scope="row">Habilitar barra flutuante</th>
 									<td>
 										<INPUT TYPE=CHECKBOX NAME="<?php echo DD_STATUS_OPTION_DISPLAY ?>" 
 				<?php echo ($ddFloatDisplay[DD_STATUS_OPTION][DD_STATUS_OPTION_DISPLAY]==DD_DISPLAY_ON) ? DD_CHECK_BOX_ON : DD_CHECK_BOX_OFF ?>>
@@ -135,7 +135,7 @@ function checkCategory(){
 						    </table>
 							
 							<div class="submit">
-								<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />
+								<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Salvar" type="submit" style="width:100px;" />
 							</div>
 						</div>
 					</div>
@@ -143,18 +143,18 @@ function checkCategory(){
 					
 					
 					<div class="stuffbox">
-						<h3><label for="link_name">2. Display Configuration</label></h3>
+						<h3><label for="link_name">2. Configurações de exibição</label></h3>
 						<div class="inside">
 							<table class="form-table">
 								<tr valign="top">
-									<th scope="row">2.1. Buttons are always displayed in vertically in the floating bar.</th>
+									<th scope="row">2.1. Botões são exibidos verticalmente na barra flutuante.</th>
 									<td>
 										
 									</td>
 								</tr>
 								
 								<tr valign="top">
-						        	<th scope="row">2.2 Buttons are allowed to display on...</th>
+						        	<th scope="row">2.2 Os botões podem aparecer em...</th>
 						        	<td>
 						        		<?php
 											foreach($ddFloatDisplay[DD_DISPLAY_OPTION] as $key => $value){
@@ -176,7 +176,7 @@ function checkCategory(){
 						        </tr>
 						        
 						        <tr valign="top">
-						        	<th scope="row">2.3 Display in "Post" under categories...</th>
+						        	<th scope="row">2.3 Exibir nos posts das seguintes categorias...</th>
 						        	<td>
 						        		<?php 
 											$dd_category_option = $ddFloatDisplay[DD_CATEORY_OPTION][DD_CATEORY_OPTION_RADIO];
@@ -187,44 +187,44 @@ function checkCategory(){
 											<INPUT TYPE="radio" NAME="<?php echo DD_CATEORY_OPTION_RADIO ?>" VALUE="<?php echo DD_CATEORY_OPTION_RADIO_INCLUDE ?>" 
 											 <?php echo ($dd_category_option==DD_CATEORY_OPTION_RADIO_INCLUDE) ? DD_RADIO_BUTTON_ON : DD_RADIO_BUTTON_OFF; ?>
 											 />
-											Include  : <input type="text" size="40" value="<?php echo $dd_category_option_text_include ?>" 
-											name="<?php echo DD_CATEORY_OPTION_TEXT_INCLUDE;?>" /> (e.g category1, category2,...)
+											Incluir  : <input type="text" size="40" value="<?php echo $dd_category_option_text_include ?>" 
+											name="<?php echo DD_CATEORY_OPTION_TEXT_INCLUDE;?>" /> (ex: categoria1, categoria2,...)
 										</div>
 										
 										<div id="dd-insider-block-category-exclude">
 											<INPUT TYPE="radio" NAME="<?php echo DD_CATEORY_OPTION_RADIO ?>" VALUE="<?php echo DD_CATEORY_OPTION_RADIO_EXCLUDE ?>"
 											 <?php echo ($dd_category_option==DD_CATEORY_OPTION_RADIO_EXCLUDE) ? DD_RADIO_BUTTON_ON : DD_RADIO_BUTTON_OFF; ?>
 											 />
-											Exclude : <input type="text" size="40" value="<?php echo $dd_category_option_text_exclude; ?>" 
-											name="<?php echo DD_CATEORY_OPTION_TEXT_EXCLUDE;?>" /> (e.g category1, category2,...)
+											Excluir : <input type="text" size="40" value="<?php echo $dd_category_option_text_exclude; ?>" 
+											name="<?php echo DD_CATEORY_OPTION_TEXT_EXCLUDE;?>" /> (ex: categoria1, categoria2,...)
 										</div>
 						        	</td>
 						        </tr>
 						        
 						        
 						        <tr valign="top">
-						        	<th scope="row">2.4 Choose how far from to the left of the content Rocksocial is placed</th>
+						        	<th scope="row">2.4 A que distância da margem esquerda a barra deve ser exibida?</th>
 						        	<td>
 						        		<input name=<?php echo DD_FLOAT_OPTION_LEFT; ?> type="number" value="<?php echo (!empty($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT])?($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_LEFT]):DD_FLOAT_OPTION_LEFT_VALUE); ?>"  size="5" style="width:50px;" maxlength="4"/>px</p>
 						        	</td>
 						        </tr>
 						        
 						        <tr valign="top">
-						        	<th scope="row">2.5 Choose how far from the top of the content Rocksocial is initially placed</th>
+						        	<th scope="row">2.5 A que distância da margem superior a barra deve ser exibida?</th>
 						        	<td>
 						        		<input name=<?php echo DD_FLOAT_OPTION_TOP; ?> type="number" value="<?php echo (!empty($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_TOP])?($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_TOP]):DD_FLOAT_OPTION_TOP_VALUE); ?>"  size="5" style="width:50px;" maxlength="4"/>px</p>
 						        	</td>
 						        </tr>
 						        
 						        <tr valign="top">
-						        	<th scope="row">2.6 Let Rocksocial bar float past the end of the post</th>
+						        	<th scope="row">2.6 Deixa a barra seguir após o final do post?</th>
 						        	<td>
 						        		<input name=<?php echo DD_COMMENT_ANCHOR_OPTION; ?> type="checkbox" <?php echo ($ddFloatDisplay[DD_COMMENT_ANCHOR_OPTION][DD_COMMENT_ANCHOR_OPTION_STATUS]==DD_DISPLAY_ON) ? DD_CHECK_BOX_ON : DD_CHECK_BOX_OFF ?>>
 						        	</td>
 						        </tr>
 						        
 						        <tr valign="top">
-						        	<th scope="row">2.7 Override initial floating bar location</th>
+						        	<th scope="row">2.7 Reconfigurar o local de inicio da barra</th>
 						        	<td>
 										Element : #<input type="text" value="<?php echo $ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_INITIAL_ELEMENT] ?>" 
 											name="<?php echo DD_FLOAT_OPTION_INITIAL_ELEMENT;?>" /> (without preceding #)
@@ -233,24 +233,24 @@ function checkCategory(){
 						    </table>
 							
 							<div class="submit">
-								<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />
+								<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Salvar" type="submit" style="width:100px;" />
 							</div>
 						</div>
 					</div>
-					<!-- End Display Configuration Config -->
+					<!-- End Configurações de exibição Config -->
 					
 					
 					<div class="stuffbox">
-						<h3><label for="link_name">3. Button Selection</label></h3>
+						<h3><label for="link_name">3. Seleção de botões</label></h3>
 						<div class="inside">
-							<p>Choose which buttons to display and how they should appear.</p>
+							<p>Escolha os botões que deseja mostrar na barra.</p>
 							
 							<table border="1" width="100%" class="dd-table">
 							<tr>
 							    <th width="3%"></th>
 								<th width="30%" class="left">Website</th>
-								<th width="5%">Weight</th>
-								<th width="15%">Enabled</th>
+								<th width="5%">Peso</th>
+								<th width="15%">Habilitado</th>
 								<th width="15%">Lazy Loading</th>
 							</tr>
 							
@@ -298,19 +298,19 @@ function checkCategory(){
 							</table>
 							
 							<div class="submit">
-								<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />
+								<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Salvar" type="submit" style="width:100px;" />
 							</div>
 						</div>
 					</div>
-					<!-- End Button Selection -->
+					<!-- End Seleção de botões -->
 
 					
 					<div class="stuffbox">
-						<h3><label for="link_name">4. Credit Link</label></h3>
+						<h3><label for="link_name">4. Promover o RockSocial</label></h3>
 						<div class="inside">
 							<table class="form-table">
 								<tr valign="top">
-									<th scope="row">Enable Credit Link</th>
+									<th scope="row">Sim, eu adoro este plugin.</th>
 									<td>
 										<INPUT TYPE=CHECKBOX NAME="<?php echo DD_FLOAT_OPTION_CREDIT; ?>" 
 			<?php echo ($ddFloatDisplay[DD_FLOAT_OPTION][DD_FLOAT_OPTION_CREDIT]==DD_DISPLAY_ON) ? DD_CHECK_BOX_ON : DD_CHECK_BOX_OFF ?>>
@@ -319,7 +319,7 @@ function checkCategory(){
 						    </table>
 							
 							<div class="submit">
-								<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />
+								<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Salvar" type="submit" style="width:100px;" />
 							</div>
 						</div>
 					</div>
@@ -328,7 +328,7 @@ function checkCategory(){
 					
 					
 					<div class="stuffbox">
-						<h3><label for="link_name">5. Reset Floating Display Settings</label></h3>
+						<h3><label for="link_name">5. Voltar as configurações padrão.</label></h3>
 						<div class="inside">
 							<div class="submit">
 								<input class="button-primary" onclick="if (confirm('Are you sure to reset \'Floating Display\' settings to default value?'))return true;return false" name="<?php echo DD_FORM_CLEAR; ?>" value="Reset Floating Display Settings" type="submit" style="width:200px;"/>

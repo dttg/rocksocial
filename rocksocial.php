@@ -3,7 +3,7 @@
  Plugin Name: Rocksocial
  Version: 5.3.6
  Plugin URI: http://marketingdeconteudo.com/rocksocial
- Author: Buffer
+ Author: Rock Content
  Author URI: http://marketingdeconteudo.com
  Description: Adicione botões de compartilhamento de maneira fácil e rápida para seu blog. Com o RockSocial, seus posts ganham mais compartilhamentos e seu site cresce mais rápido. Basta ativar o plugin e você vai começar a ver seus posts sendo cada vez mais compartilhados no Twitter, Facebook, Google Plus e outras redes sociais.
 
@@ -492,9 +492,9 @@ function dd_admin_generate_menu_link() {
 
 	$page = add_menu_page('Rocksocial', 'Rocksocial', 'manage_options', 'dd_button_setup');
 
-	$dd_button_global_setup = add_submenu_page('dd_button_setup', 'Rocksocial - Global Configuration', 'Global Config', 'manage_options', 'dd_button_setup', 'dd_button_global_setup');
-	$dd_page_for_normal_display = add_submenu_page('dd_button_setup', 'Rocksocial - Normal Button Configuration ', 'Normal Display', 'manage_options', 'dd_page_for_normal_display', 'dd_page_for_normal_display');
-	$dd_page_for_floating_display = add_submenu_page('dd_button_setup', 'Rocksocial - Floating Button Configuration', 'Floating Display', 'manage_options', 'dd_page_for_floating_display', 'dd_page_for_floating_display');
+	$dd_button_global_setup = add_submenu_page('dd_button_setup', 'Rocksocial - Configurações Globais', 'Configurações Globais', 'manage_options', 'dd_button_setup', 'dd_button_global_setup');
+	$dd_page_for_normal_display = add_submenu_page('dd_button_setup', 'Rocksocial - Botões Fixos ', 'Botões Fixos', 'manage_options', 'dd_page_for_normal_display', 'dd_page_for_normal_display');
+	$dd_page_for_floating_display = add_submenu_page('dd_button_setup', 'Rocksocial - Botões Flutuantes', 'Botões Flutuantes', 'manage_options', 'dd_page_for_floating_display', 'dd_page_for_floating_display');
 	//$dd_button_manual_setup = add_submenu_page('dd_button_setup', 'Rocksocial - Manual Placement', 'Manual Placement', 'manage_options', 'dd_button_manual_setup', 'dd_button_manual_setup');
 
 	//puts admin css in rocksocial admin page only

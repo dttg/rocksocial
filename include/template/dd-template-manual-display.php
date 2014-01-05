@@ -11,7 +11,7 @@ function dd_print_manual_form($dd_manual_code){
 ?>
 <div class="wrap dd-wrap columns-2">
 	<div id="icon-edit-pages" class="icon32 icon32-posts-page"><br /></div>
-	<h2>Rocksocial - Manual Placement</h2>
+	<h2>Rocksocial - Posicionamento manual</h2>
 	
 	<div id="poststuff" class="metabox-holder has-right-sidebar">
 		<?php include("dd-sidebar.php"); ?>
@@ -19,21 +19,17 @@ function dd_print_manual_form($dd_manual_code){
 			<div id="post-body-content">
 			
 				<div class="stuffbox">
-					<h3><label for="link_name">Advance Usage</label></h3>
+					<h3><label for="link_name">Uso avançado</label></h3>
 					<div class="inside">
 						<p>
-						For advance users who do not like Rocksocial pre-defined integration display,
-						you can use this manual code to display button to everywhere you want. 
+						Este é o procedimento manual para incluir botões em suas páginas.
 						</p>
-						<h4>Example</h4>
+						<h4>Exemplo</h4>
 						<p>
-							1. Place <code>&lt;?php dd_digg_generate('Normal') ?&gt;</code> in your "single.php",
-							it will generate a normal digg button in your single post page. 
+							1. Coloque esta função  <code>&lt;?php if(function_exists('dd_digg_generate')){dd_digg_generate('Normal');} ?&gt;</code> no seu arquivo "single.php",
+						Ela adicionará um botão em cada post do seu site.
 						</p>
-						<p>
-							2. It's always recommended to rewrite above code with function_exists() checking : <br/>
-							<code>&lt;?php if(function_exists('dd_digg_generate')){dd_digg_generate('Normal');} ?&gt;</code>
-						</p>
+						
 					
 						<?php 
 							

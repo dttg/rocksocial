@@ -238,13 +238,13 @@ p{
 	margin-bottom: 2px;
 }
 
-/** "Try Buffer" styles **/
-#try-buffer div.signup {
+
+#try-rock div.signup {
 	margin: 20px auto;
 	text-align: center;
 }
 
-#try-buffer a.button {
+#try-rock a.button {
 	background-color: #7AC054;
 	background-image: -moz-linear-gradient(top, #a7ed82, #549a2f);
 	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #a7ed82),color-stop(1, #549a2f));
@@ -269,14 +269,14 @@ p{
 	padding: 10px 15px;
 }
 
-#try-buffer a.button:hover {
+#try-rock a.button:hover {
 	-moz-box-shadow: 0 0 5px #666;
 	-webkit-box-shadow: 0 0 5px #666;
 	box-shadow: 0 0 5px #666;
 	border: 1px solid #666;
 }
 
-#try-buffer a.button:active {
+#try-rock a.button:active {
 	background-color: #7AC054;
 	background-image: -moz-linear-gradient(top, #549a2f, #a7ed82);
 	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #549a2f),color-stop(1, #a7ed82));

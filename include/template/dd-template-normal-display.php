@@ -41,14 +41,14 @@ function dd_page_for_normal_display(){
 	    
 		update_option(DD_NORMAL_BUTTON, $ddNormalButtons);
 
-		echo "<div id=\"updatemessage\" class=\"updated fade\"><p>Rocksocial settings updated.</p></div>\n";
+		echo "<div id=\"updatemessage\" class=\"updated fade\"><p>Rocksocial configurações atualizadas.</p></div>\n";
 		echo "<script type=\"text/javascript\">setTimeout(function(){jQuery('#updatemessage').hide('slow');}, 3000);</script>";	
 		
   	}else if(isset($_POST[DD_FORM_CLEAR])){
 	
         dd_clear_form_normal_display(DD_FUNC_TYPE_RESET);
         
-		echo "<div id=\"errmessage\" class=\"error fade\"><p>Rocksocial settings cleared.</p></div>\n";
+		echo "<div id=\"errmessage\" class=\"error fade\"><p>Configurações padrão foram aplicadas com sucesso.</p></div>\n";
 		echo "<script type=\"text/javascript\">setTimeout(function(){jQuery('#errmessage').hide('slow');}, 3000);</script>";	
 	
   	}
@@ -102,7 +102,7 @@ function checkCategory(){
 
 <div class="wrap dd-wrap columns-2">
 	<div id="icon-edit-pages" class="icon32 icon32-posts-page"><br /></div>
-	<h2>Rocksocial - Normal Button Configuration</h2>
+	<h2>Rocksocial - Botões fixos (Não flutuantes)</h2>
 	
 	<div id="poststuff" class="metabox-holder has-right-sidebar">
 		<?php include("dd-sidebar.php"); ?>
@@ -117,7 +117,7 @@ function checkCategory(){
 							
 							<table class="form-table">
 								<tr valign="top">
-									<th scope="row">Enable Normal Display</th>
+									<th scope="row">Habilitar botões fixos</th>
 									<td>
 										<INPUT TYPE=CHECKBOX NAME="<?php echo DD_STATUS_OPTION_DISPLAY ?>" 
 				<?php echo ($ddNormalDisplay[DD_STATUS_OPTION][DD_STATUS_OPTION_DISPLAY]==DD_DISPLAY_ON) ? DD_CHECK_BOX_ON : DD_CHECK_BOX_OFF ?>>
@@ -126,7 +126,7 @@ function checkCategory(){
 						    </table>
 							
 							<div class="submit">
-								<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />
+								<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Salvar" type="submit" style="width:100px;" />
 							</div>
 							
 						</div>
@@ -135,7 +135,7 @@ function checkCategory(){
 					
 					
 					<div class="stuffbox">
-						<h3><label for="link_name">Display Configuration</label></h3>
+						<h3><label for="link_name">Configurações de exibição</label></h3>
 						<div class="inside">
 							
 							<?php 
@@ -144,7 +144,7 @@ function checkCategory(){
 							
 							<table class="form-table">
 								<tr valign="top">
-									<th scope="row">2.1 Buttons are display in horizontal or vertical order?</th>
+									<th scope="row">2.1 Botões horizontais ou verticais?</th>
 									<td>
 										<select name="<?php echo DD_LINE_UP_OPTION_SELECT; ?>"  style="width:120px">
 											<option value="<?php echo DD_LINE_UP_OPTION_SELECT_HORIZONTAL; ?>"
@@ -163,7 +163,7 @@ function checkCategory(){
 								</tr>
 								
 								<tr valign="top">
-						        	<th scope="row">2.2 Buttons are display in...</th>
+						        	<th scope="row">2.2 Botões são exibidos em...</th>
 						        	<td>
 						        		<?php 
 											foreach($ddNormalDisplay[DD_DISPLAY_OPTION] as $key => $value){
@@ -184,7 +184,7 @@ function checkCategory(){
 						        </tr>
 						        
 						         <tr valign="top">
-						        	<th scope="row">2.3 Display in "Post" under categories...</th>
+						        	<th scope="row">2.3 Exibir apenas nos posts das categorias...</th>
 						        	<td>
 						        		<?php 
 											$dd_category_option = $ddNormalDisplay[DD_CATEORY_OPTION][DD_CATEORY_OPTION_RADIO];
@@ -195,8 +195,8 @@ function checkCategory(){
 											<INPUT TYPE="radio" NAME="<?php echo DD_CATEORY_OPTION_RADIO ?>" VALUE="<?php echo DD_CATEORY_OPTION_RADIO_INCLUDE ?>" 
 											 <?php echo ($dd_category_option==DD_CATEORY_OPTION_RADIO_INCLUDE) ? DD_RADIO_BUTTON_ON : DD_RADIO_BUTTON_OFF; ?>
 											 />
-											Include  : <input type="text" size="40" value="<?php echo $dd_category_option_text_include ?>" 
-											name="<?php echo DD_CATEORY_OPTION_TEXT_INCLUDE;?>" /> (e.g category1, category2,...)
+											Incluir  : <input type="text" size="40" value="<?php echo $dd_category_option_text_include ?>" 
+											name="<?php echo DD_CATEORY_OPTION_TEXT_INCLUDE;?>" /> (ex: categoria1, categoria2,...)
 										</div>
 										
 										<div id="dd-insider-block-category-exclude">
@@ -204,23 +204,22 @@ function checkCategory(){
 											 <?php echo ($dd_category_option==DD_CATEORY_OPTION_RADIO_EXCLUDE) ? DD_RADIO_BUTTON_ON : DD_RADIO_BUTTON_OFF; ?>
 											 />
 											Exclude : <input type="text" size="40" value="<?php echo $dd_category_option_text_exclude; ?>" 
-											name="<?php echo DD_CATEORY_OPTION_TEXT_EXCLUDE;?>" /> (e.g category1, category2,...)
+											name="<?php echo DD_CATEORY_OPTION_TEXT_EXCLUDE;?>" /> (ex: categoria1, categoria2,...)
 										</div>
 						        	</td>
 						        </tr>
 						        
 						        <tr valign="top">
-						        	<th scope="row">2.4 Enable Rocksocial to modify your post excerpt.</th>
+						        	<th scope="row">2.4 Permitir que o Rock Social modifique o resumo do seu post.</th>
 						        	<td>
 						        		<INPUT TYPE=CHECKBOX NAME="<?php echo DD_EXCERP_OPTION_DISPLAY ?>" 
 										<?php echo ($ddNormalDisplay[DD_EXCERP_OPTION][DD_EXCERP_OPTION_DISPLAY]==DD_DISPLAY_ON) ? DD_CHECK_BOX_ON : DD_CHECK_BOX_OFF ?>>
-										<p><i>Deselect above setting, if it caused conflict to your existing excerpt plugin.</i></p>
 						        	</td>
 						        </tr>
 						    </table>
 							
 							<div class="submit">
-								<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />
+								<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Salvar" type="submit" style="width:100px;" />
 							</div>
 							
 						</div>
@@ -229,18 +228,18 @@ function checkCategory(){
 					
 					
 					<div class="stuffbox">
-						<h3><label for="link_name">3. Buttons Selection</label></h3>
+						<h3><label for="link_name">3. Seleção de botões</label></h3>
 						<div class="inside">
 							
-							<p>Choose and customize button layout to display.</p>
+							<p>Escolha os botões que você deseja.</p>
 							
 							<table border="1" width="100%" class="dd-table">
 							<tr>
 							    <th width="3%"></th>
 								<th width="30%" class="left">Website</th>
-								<th width="10%">Integration Type</th>
-								<th width="10%">Button Design</th>
-								<th width="5%">Weight</th>
+								<th width="10%">Tipo de integração</th>
+								<th width="10%">Design</th>
+								<th width="5%">Peso</th>
 								<th width="15%">Lazy Loading</th>
 							</tr>
 							
@@ -307,7 +306,7 @@ function checkCategory(){
 							</table>
 							
 							<div class="submit">
-								<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Save changes" type="submit" style="width:100px;" />
+								<input class="button-primary" name="<?php echo DD_FORM_SAVE; ?>" value="Salvar" type="submit" style="width:100px;" />
 							</div>
 							
 						</div>
@@ -317,11 +316,11 @@ function checkCategory(){
 					
 					
 					<div class="stuffbox">
-						<h3><label for="link_name">4. Reset Normal Display Settings</label></h3>
+						<h3><label for="link_name">4. Restaurar configurações padrão</label></h3>
 						<div class="inside">
 							<div class="submit">
-								<input class="button-primary" onclick="if (confirm('Are you sure to reset \'Normal Display\' settings to default value?'))return true;return false" 
-			name="<?php echo DD_FORM_CLEAR; ?>" value="Reset Normal Display Settings" type="submit" style="width:200px;"/>
+								<input class="button-primary" onclick="if (confirm('Tem certeza que deseja voltar o plugin para suas configurações padrão?'))return true;return false" 
+			name="<?php echo DD_FORM_CLEAR; ?>" value="Quero voltar para as configurações padrão" type="submit" style="width:200px;"/>
 							</div>
 						</div>
 					</div>

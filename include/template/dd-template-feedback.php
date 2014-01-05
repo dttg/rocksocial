@@ -10,11 +10,11 @@ function dd_feedback_setup(){
 		$dd_feedback_diagnostics = $_POST['object']['diagnostics'];
 		$dd_feedback_url = $_POST['object']['include_url'];
 	
-		if($dd_feedback_name=='') $dd_feedback_errors[] = 'Please make sure you have entered a name.';
-		if($dd_feedback_email=='') $dd_feedback_errors[] = 'Please make sure you have entered a valid email address.';
+		if($dd_feedback_name=='') $dd_feedback_errors[] = 'Por favor informe seu nome.';
+		if($dd_feedback_email=='') $dd_feedback_errors[] = 'Por favor informe um email válido.';
 		//if(!array_key_exists($this->data->type, $this->feedback_types)) $dd_feedback_errors[] = 'Please make sure you have selected a feedback type.';
-		if($dd_feedback_message == '') $dd_feedback_errors[] = 'Please make sure you have entered a message.';
-		if(strlen($dd_feedback_message)>2500) $dd_feedback_errors[] = 'Please make sure your message is less than 2500 characters in length.';
+		if($dd_feedback_message == '') $dd_feedback_errors[] = 'Por favor, digite sua mensagem.';
+		if(strlen($dd_feedback_message)>2500) $dd_feedback_errors[] = 'Sua mensagem não pode conter mais de 2500 caracteres.';
 		
 		
 		if(count($dd_feedback_errors)==0) {
@@ -41,10 +41,7 @@ function dd_feedback_setup(){
 		<?php if(count($dd_feedback_errors) != 0): ?><div class="error"><ul style="padding-top:6px;"><li><?php echo implode('</li><li>',$dd_feedback_errors); ?></li></ul></div><?php endif; ?>
 		
 		<h2>Rocksocial <?php echo DD_VERSION; ?> Feedback</h2>
-		<p>Awesome to see you have some feedback for us here at Rocksocial. With the form below, you can easily send us any ideas, support requests, bug reports or also just a friendly hello to chat. To reach us super fast, you can also try <a href="http://www.twitter.com/RocksocialWP">@RocksocialWP</a> on Twitter.</p>
-		
-		<p>Before you fire us an email, please check <a href="http://wordpress.org/extend/plugins/rocksocial/faq/" target="_blank">our FAQs</a> to see if your question has already been answered there.</p>
-		
+		<p>Adoramos ouvir feedback sobre nosso plugin. Envie seu feedback pelo formulário abaixo. Para um atendimento super rápido, fale conosco no <a href="http://www.twitter.com/rockcontent">@RockcontentP</a> no Twitter.</p>
 		<form method="post" action="">
 			<table class="form-table">
 				<tr>
@@ -52,38 +49,38 @@ function dd_feedback_setup(){
 					<td><strong>Rocksocial</strong> (version <?php echo DD_VERSION; ?>)</td>
 				</tr>
 				<tr>
-					<th scope="row">Your name</th>
+					<th scope="row">Seu nome</th>
 					<td><input type="text" name="object[name]" value="<?php echo dd_e($dd_feedback_name); ?>" class="regular-text" /></td>
 				</tr>
 				<tr>
-					<th scope="row">Your email address</th>
+					<th scope="row">Seu endereço de email</th>
 					<td>
 						<input type="text" name="object[email]" value="<?php echo dd_e($dd_feedback_email); ?>" class="regular-text" />
-						<br /><span class="description">This will only be used to reply to you</span>
+						<br />
 					</td>
 				</tr>
 				<tr>
-					<th scope="row">Feedback type</th>
+					<th scope="row">Feedback</th>
 					<td>
 						<select name="object[type]">
-							<option>General feedback</option>
-							<option>Bug report</option>
-							<option>Feature request</option>
-							<option>Other</option>
+							<option>Geral</option>
+							<option>Bug</option>
+							<option>Pedido de funcionalidade</option>
+							<option>Outro</option>
 						</select>
 					</td>
 				</tr>
 				<tr>
-					<th scope="row">Your message<br /><span class="description">Max 2500 chars</span></th>
+					<th scope="row">Sua mensagem<br /><span class="description">Máximo 2500 caracteres</span></th>
 					<td>
 						<textarea name="object[message]" class="large-text" rows="10" cols="50"><?php echo dd_e($dd_feedback_message); ?></textarea>
 					</td>
 				</tr>
 				<?php if(is_array($diagnostics) and count($diagnostics)>0): ?>
 					<tr>
-						<th scope="row">Diagnostic data</th>
+						<th scope="row">Dados de diagnóstico</th>
 						<td>
-							The following information will also be sent with your message, it allows us to more easily identify any potential problems. No personally identifiable data will be transmitted except for what you enter above.
+							Os dados de diagnóstico são enviados para nos ajudar a entender melhor os problemas que você estar enfrentando.
 							<textarea name="object[diagnostics]" class="large-text" rows="5" cols="50"><?php foreach($diagnostics as $k=>$v): ?><?php echo $k.': '.$v."\n"; ?><?php endforeach; ?></textarea>
 						</td>
 					</tr>
@@ -93,7 +90,7 @@ function dd_feedback_setup(){
 				<tr>
 					<th></th>
 					<td colspan="2">
-						<label><input type="checkbox" name="object[include_url]" value="include" /> Include URL to website in message.</label>
+						<label><input type="checkbox" name="object[include_url]" value="include" /> Incluir URL do site na mensagem.</label>
 					</td>
 				</tr>
 				
@@ -102,7 +99,6 @@ function dd_feedback_setup(){
 				<input type="submit" name="submit" value="Send" class="button-primary" />
 			</div>
 		</form>
-		<p class="description">All data sent is confidential and will not be shared with third parties. We endeavour to respond to all enquiries as quickly as possible but delays may be encountered.</p>
 	</div>
 
 <?php
@@ -114,8 +110,8 @@ function dd_feedback_success(){
 ?>
 	<div class="wrap">
 		<h2>Rocksocial <?php echo DD_VERSION; ?> Feedback</h2>
-		<div class="updated"><p>Feedback sent successfully.</p></div>
-		<p>Thank you for getting in touch. Your message has been sent to the plugin developer(s).</p>
+		<div class="updated"><p>Feedback enviado com sucesso.</p></div>
+		<p>Obrigado pelo contato. Responderemos o mais rápido possível.</p>
 	</div>
 
 <?php

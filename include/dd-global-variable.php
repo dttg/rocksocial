@@ -38,7 +38,7 @@ define('DD_SELECT_LEFT_FLOAT','left_float');
 define('DD_SELECT_RIGHT_FLOAT','right_float');
 define('DD_SELECT_BEFORE_CONTENT','before_content');
 define('DD_SELECT_AFTER_CONTENT','after_content');
-define('DD_FORM_BUTTON_SAVE','Save Changes');
+define('DD_FORM_BUTTON_SAVE','Salvar');
 
 //for delicious only
 define('DD_PLUGIN_STYLE_DELICIOUS', 'dd_delicious_normal_image');

@@ -1,5 +1,5 @@
 === Rocksocial ===
-Contributors: joelg87, andy7629, dttg, buidan
+Contributors: dttg, buidan, rockcontent, marketingdeconteudo,  joelg87, andy7629, 
 Tags: google, google+1, plus one, tweet, twitter, facebook, share, like, stumbleupon, social sharing, linkedin, reddit, pinterest, sharebar, social media, social networking, sharethis, pocket, tumblr
 Requires at least: 2.3
 Tested up to: 3.5.1
