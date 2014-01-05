@@ -6,7 +6,7 @@ Tested up to: 3.5.1
 Stable tag: 5.3.6
 License: GPLv2 or later
 
-Seu plugin de botões de compartilhamento, o RockSocial é simples e fácil de usar. Baseado no plugin Digg Digg, mas com muito mais facilidade de uso. 
+Seu plugin de botões de compartilhamento, o RockSocial é baseado no plugin DiggDigg, mas com muito mais facilidade de uso. 
 
 == Description ==
 Com o RockSocial você tem botões de compartilhamento para as principais redes sociais no seu blog. Exiba todos os seus perfis de redes sociais de modo fácil e lindo! 
@@ -32,3 +32,8 @@ Tem uma dúvida? Fale conosco: contato@rockcontent.com
 
 == Changelog ==
 First version
+
+== Upgrade Notice ==
+None
+== Screenshots ==
+None yet
