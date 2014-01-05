@@ -5,9 +5,8 @@
  Plugin URI: http://marketingdeconteudo.com/rocksocial
  Author: Buffer
  Author URI: http://marketingdeconteudo.com
- Description: Add a floating bar with share buttons to your blog. Just like Mashable!
-              Help your posts get more shares, help yourself get more traffic.
-              Simply Activate Rocksocial now to enhance your posts.
+ Description: Adicione botões de compartilhamento de maneira fácil e rápida para seu blog. Com o RockSocial, seus posts ganham mais compartilhamentos e seu site cresce mais rápido. Basta ativar o plugin e você vai começar a ver seus posts sendo cada vez mais compartilhados no Twitter, Facebook, Google Plus e outras redes sociais.
+
 */
 
 define( 'DD_PLUGIN_URL', plugins_url( '/', __FILE__ ) );
